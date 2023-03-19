@@ -1,0 +1,14 @@
+2023-02-17 10:42:26,263 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2023-02-17 10:42:26,265 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'update']
+2023-02-17 10:42:26,267 DEBUG    root            Running [gcloud.components.update] with arguments: [--quiet: "True"]
+2023-02-17 10:42:26,283 INFO     ___FILE_ONLY___ Beginning update. This process may take several minutes.
+
+2023-02-17 10:42:26,293 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2023-02-17 10:42:26,368 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 206156
+2023-02-17 10:42:26,456 INFO     ___FILE_ONLY___ 
+
+2023-02-17 10:42:26,456 INFO     ___FILE_ONLY___ All components are up to date.
+
+2023-02-17 10:42:26,456 DEBUG    root            Updating notification cache...
+2023-02-17 10:42:26,457 DEBUG    root            Chosen display Format:none
+2023-02-17 10:42:26,457 INFO     root            Display format: "none"

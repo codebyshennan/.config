@@ -1,0 +1,40 @@
+2023-02-21 18:41:54,797 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2023-02-21 18:41:54,801 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2023-02-21 18:41:54,802 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "json", --quiet: "True", --verbosity: "warning"]
+2023-02-21 18:41:54,808 DEBUG    root            Chosen display Format:default json
+2023-02-21 18:41:54,809 INFO     root            Display format: "default json"
+2023-02-21 18:41:54,810 INFO     ___FILE_ONLY___ {
+  "configuration": {
+    "active_configuration": "default",
+    "properties": {
+      "compute": {
+        "region": "asia-southeast1-a"
+      },
+      "container": {
+        "use_application_default_credentials": "true"
+      },
+      "core": {
+        "account": "wongshennan@gmail.com",
+        "disable_prompts": "True",
+        "disable_usage_reporting": "True",
+        "print_unhandled_tracebacks": "true",
+        "project": "test",
+        "verbosity": "warning"
+      },
+      "metrics": {
+        "environment": "cloudcode.vscode",
+        "environment_version": "1.21.3"
+      }
+    }
+  },
+  "credential": {
+    "access_token": "ya29.a0AVvZVsoEe9W5Iaio79uzODTi-kc_59wI3BwMbg-kSVJ9hSgP7f7L3XM95hVQ98zzzOZI8U_Zbibf25R4N8K4zxVUid3H-GS87T0OjtU5FxIDUorp4I1Z3YFq-g24YXuzTXiWL2a86YQ-6e39JgyCclVA7Xyie9EwvEpC904aCgYKAXMSAQASFQGbdwaIx972-qTh7s8M64OtDgKorw0174",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU5NjJlN2EwNTljN2Y1YzBjMGQ1NmNiYWQ1MWZlNjRjZWVjYTY3YzYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0MTQ0MTEzNTczMTc4NjIzNzc1IiwiZW1haWwiOiJ3b25nc2hlbm5hbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IkV6MDRLbU1BY1gzMWh4UnpPOEhEdFEiLCJpYXQiOjE2NzY5NzU0ODQsImV4cCI6MTY3Njk3OTA4NH0.e_vvHVylZNllYCEtPM526E1-443gCXawpFaL7S3qyn0CiUnHe6wrwux08Kde8FbLJFXNrZzzlR9lGvaQXCniGYVmvq9GdYYSMVVADsx9j9fD0F4xkmIklezpjQpXOVJ2W8Z7UrBXmeZq8pv4wGdd3FIgYcXJkZWiy13QDVLSBeESw_jsXhOnjHYjNdTYFXY5-aIeqdH5V56HrTyIjS7INS2J6FnEm6G2TtRKpYxzVJzJ5LDqiHaVVDLRSuv6m7PjW2xJShOULGGaS-5rVPyE-6SYrRV118ytmGor5fVeYmecoYzOvVFerGP7S_Nn1OygKU2VDx8uXC1PjWORQ_BnEQ",
+    "token_expiry": "2023-02-21T11:31:23Z"
+  },
+  "sentinels": {
+    "config_sentinel": "/Users/wongshennan/.config/gcloud/config_sentinel"
+  }
+}
+2023-02-21 18:41:54,810 INFO     ___FILE_ONLY___ 
+

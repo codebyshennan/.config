@@ -1,0 +1,45 @@
+2023-03-16 10:46:33,408 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2023-03-16 10:46:33,437 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2023-03-16 10:46:33,440 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "json", --quiet: "True", --verbosity: "warning"]
+2023-03-16 10:46:33,445 DEBUG    google.auth.transport.requests Making request: POST https://oauth2.googleapis.com/token
+2023-03-16 10:46:33,466 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2023-03-16 10:46:33,635 DEBUG    urllib3.connectionpool https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2023-03-16 10:46:33,646 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): www.gstatic.com:443
+2023-03-16 10:46:33,710 DEBUG    urllib3.connectionpool https://www.gstatic.com:443 "GET /cloudsdk/feature_flag_config_file.yaml HTTP/1.1" 200 101
+2023-03-16 10:46:33,717 DEBUG    root            Chosen display Format:default json
+2023-03-16 10:46:33,717 INFO     root            Display format: "default json"
+2023-03-16 10:46:33,717 INFO     ___FILE_ONLY___ {
+  "configuration": {
+    "active_configuration": "default",
+    "properties": {
+      "compute": {
+        "region": "asia-southeast1-a"
+      },
+      "container": {
+        "use_application_default_credentials": "true"
+      },
+      "core": {
+        "account": "wongshennan@gmail.com",
+        "disable_prompts": "True",
+        "disable_usage_reporting": "True",
+        "print_unhandled_tracebacks": "true",
+        "project": "test",
+        "verbosity": "warning"
+      },
+      "metrics": {
+        "environment": "cloudcode.vscode",
+        "environment_version": "1.21.3"
+      }
+    }
+  },
+  "credential": {
+    "access_token": "ya29.a0AVvZVsoy2G5oWq2C2iN7JS-cIMlQShAS5rZt0rV35qRd0K7VPMQc6DN-wB0rmr35gLtE2rNSzI36vhy3OOlRaciHgHWUXZ-T_3Jwe0xGm_Dm7qdIzdDCKQ7Rh_0SaA1Vszx9Iy_WQI6ipzPwBVF2jDGVg0DRoOXnochz7DwaCgYKAdwSARMSFQGbdwaIYSriNrR1Banhi8AmsKBMrw0174",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkZjFmOTQ1ZmY5MDZhZWFlZmE5M2MyNzY5OGRiNDA2ZDYwNmIwZTgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0MTQ0MTEzNTczMTc4NjIzNzc1IiwiZW1haWwiOiJ3b25nc2hlbm5hbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlBOMzNfT2xyWV9hN2ktMjQwem1lU3ciLCJpYXQiOjE2Nzg5MzQ3OTMsImV4cCI6MTY3ODkzODM5M30.MHH2_GyQLIi3MAaWBPr1QRaAcvT5iqGOacNiN2zDQB0IeAA8ZH-9wu0srjzhy902cl-g8vjL3nu6xScp-A2ad6HFQfaDBVBXdPKHAgKQqJzEPhtfUEXqEZ52atwvWLgH8fXUSk2MWtd7OnmltR4yit8_-Y5k1pHhIV-ThkrDhp8v1bRCEUkI1kg1PIKQxaIsUX_TTcvcr_U-MdJO3WFfnnPDvgoYiQ4Vqq1jiWz49o94nYBz9QxtRM1DWRzwST8tlkWP_otEr_s4-fzDuTVsE0wr4-X4eEJmrVj_6xsSp8xoRLI-bUq0ED_YRxGtpv1B6ABbSRXjdgIFQ-UjfjJajA",
+    "token_expiry": "2023-03-16T03:46:32Z"
+  },
+  "sentinels": {
+    "config_sentinel": "/Users/wongshennan/.config/gcloud/config_sentinel"
+  }
+}
+2023-03-16 10:46:33,718 INFO     ___FILE_ONLY___ 
+

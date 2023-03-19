@@ -1,0 +1,13 @@
+2023-03-14 19:28:07,384 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2023-03-14 19:28:07,386 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'list']
+2023-03-14 19:28:07,387 DEBUG    root            Running [gcloud.auth.list] with arguments: [--filter: "status=ACTIVE", --format: "value(account)", --quiet: "True", --verbosity: "warning"]
+2023-03-14 19:28:07,467 DEBUG    root            Chosen display Format:    table[title='Credentialed Accounts'](
+        status.yesno(yes='*', no=''):label=ACTIVE,
+        account
+    ) value(account)
+2023-03-14 19:28:07,468 INFO     root            Display format: "    table[title='Credentialed Accounts'](
+        status.yesno(yes='*', no=''):label=ACTIVE,
+        account
+    ) value(account)"
+2023-03-14 19:28:07,469 INFO     ___FILE_ONLY___ wongshennan@gmail.com
+

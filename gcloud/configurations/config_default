@@ -1,0 +1,7 @@
+[core]
+account = wongshennan@gmail.com
+project = test
+
+[compute]
+region = asia-southeast1-a
+

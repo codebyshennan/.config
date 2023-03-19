@@ -1,0 +1,13 @@
+2023-03-16 10:50:02,842 DEBUG    root            Loaded Command Group: ['gcloud', 'version']
+2023-03-16 10:50:02,843 DEBUG    root            Running [gcloud.version] with arguments: [--format: "json"]
+2023-03-16 10:50:02,848 DEBUG    root            Chosen display Format:flattened[no-pad,separator=" "] json
+2023-03-16 10:50:02,848 INFO     root            Display format: "flattened[no-pad,separator=" "] json"
+2023-03-16 10:50:02,848 INFO     ___FILE_ONLY___ {
+  "Google Cloud SDK": "422.0.0",
+  "bq": "2.0.88",
+  "core": "2023.03.10",
+  "gcloud-crc32c": "1.0.0",
+  "gsutil": "5.21"
+}
+2023-03-16 10:50:02,848 INFO     ___FILE_ONLY___ 
+
