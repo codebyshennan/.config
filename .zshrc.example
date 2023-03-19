@@ -1,0 +1,6 @@
+# ~/.zshrc
+
+# Load seperated config files
+for FILE in $HOME/.config/zsh/*; do
+  source $FILE
+done
