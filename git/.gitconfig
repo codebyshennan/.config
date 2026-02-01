@@ -1,0 +1,135 @@
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /Users/wongshennan/.gitignore_global
+	editor = vim
+	pager = delta
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[delta]
+	features = catppucin-mocha
+	navigate = true
+	side-by-side = true
+[delta "interactive"]
+	trueColor = true
+	keep-plus-minus-markers = true
+[delta "catppucin-mocha"]
+	blame-palette = "#eff1f5 #e6e9ef #dce0e8 #ccd0da #bcc0cc"
+	commit-decoration-style = bold box ul
+	dark = false
+[alias]
+	remotesh = remote set-head origin --auto
+	# select the main branch (choose main or master or whatever you want)
+	mb = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+
+	info  = "!sh -c '[ $# -ne 0 ] && git remote show $1 && exit 0 || [ $#= 0 ] && git remote show origin && exit 0' -"
+
+	prune-all = !git remote | xargs -n 1 git remote prune
+
+	# show the last commit
+	whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+	this = !git init && ( [[ -n $(ls) ]] || touch .gitignore ) && git add . && git commit -m \"initial commit\"
+	s = status
+
+	# switch to the <branch>
+	co = checkout # <branch>
+	# creates a new branch 
+	cob = checkout -b
+	# deletes the branch
+	del = branch -D # <branch>
+	# shows the branches with nice formatting
+	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+
+	# save at checkpoint
+	save =!git add . && git commit -m 'chore: savepoint'
+	# ctrl-z of git / rollback changes
+	undo = reset HEAD~1 --mixed
+	# resets all staged changes (those that you added with the git add command)
+	res = reset --hard
+	# using this alias and the shortcut of HEAD is often useful when the branch names are long
+	done = push origin HEAD
+	
+	# compact log
+	lg = log --pretty=format:\"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) [%an]\" --abbrev-commit -30
+	# graph format of log
+	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	
+	# show most recent 
+	last = log -1 HEAD
+
+	# show leaderboard
+	po = !git pull origin $(git mb)
+	pu = !git pull upstream $(git mb)
+	psh = !git pull origin $(git mb)
+
+	rank = !git shortlog -ens | awk \"{email=""; email=email \\$NF; count_by_user[email]+=$1} END {for (email in count_by_user) print count_by_user[email], email}\" | sort -rn
+
+	alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || [ $# = 1 ] && [ $1 = \"--list\" ] && git config --list | grep \"alias\\.\" | sed \"s/^alias\\.\\([^=]*\\)=\\(.*\\).*/\\1@@@@=>@@@@\\2/\" | sort | column -ts \"@@@@\" && exit 0 || echo \"usage: git alias <new alias> <original command>\\n       git alias --list\" >&2 && exit 1' -"
+
+	ignore = "!sh -c '([ $# = 2 ] && ([ \"$1\" = \"--local\" ] && echo \"$2\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\" || ([ \"$2\" = \"--local\" ] && echo \"$1\" >> \"./$(git rev-parse --show-cdup)/.git/info/exclude\"))) || ([ $# = 1 ] && (([ \"$1\" == \"--list\" ] && git ls-files -i --exclude-standard) || (([ ! -e .gitignore ] && touch .gitignore || echo \"$(cat .gitignore)\" > .gitignore) && echo \"$1\" >> .gitignore))) || echo \"usage: git ignore <file>\\n       git ignore --local <file>\\n       git ignore --list\" >&2 && exit 1' -"
+
+	rlog = reflog --abbrev --decorate
+
+	lstat = log --relative --abbrev-commit --date=local --pretty=format:'%C(white)%h %C(cyan)%cr %C(green)by %cn %Creset%n%C(yellow)%cd%n%s' --stat
+
+	lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+	heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --annotate-stdin --always --name-only | column -t -s';'"
+
+	rank = !"git shortlog -ens | awk '{email=/"/"; email=email $NF; count_by_user[email]+=$1} END {for (email in count_by_user) print count_by_user[email], email}' | sort -rn"
+
+	# Reads the current version number from the `package.json` file, increases the last digit by 1, updates the version number in the `package.json` file, installs new dependencies, and commits the changes to the git repository with the message "chore: bump pkg version".
+	up = !"CURRENTVERSION=$(jq -r '.version' ./package.json); \
+				NEXTVERSION=$(echo ${CURRENTVERSION} | \
+				awk -F. -v OFS=. '{$NF += 1 ; print}'); \
+				tmp=$(mktemp); \
+				jq --arg a $NEXTVERSION '.version = $a' package.json > '$tmp' && mv '$tmp' package.json; \
+				npm i; \
+				git add .; \
+				git commit -m 'chore: bump pkg version'"
+
+	ls           = "!git status -suno"
+	ls-modified  = "!git status --porcelain -uno | awk 'match($1, /M/) {print $2}'"
+	ls-added     = "!git status --porcelain -uno | awk 'match($1, /A/) {print $2}'"
+	ls-deleted   = "!git status --porcelain -uno | awk 'match($1, /D/) {print $2}'"
+	ls-renamed   = "!git status --porcelain -uno | awk 'match($1, /R/) {print $2}'"
+	ls-copied    = "!git status --porcelain -uno | awk 'match($1, /C/) {print $2}'"
+	ls-updated   = "!git status --porcelain -uno | awk 'match($1, /U/) {print $2}'"
+	ls-staged    = "!git status --porcelain -uno | grep -P '^[MA]' | awk '{ print $2 }'"
+	ls-untracked = "!git status --porcelain -uall | awk '$1 == \"??\" {print $2}'"
+
+	track = "!sh -c '[ $# = 2 ] && git branch --track \"$1\" \"$2\" && exit 0 || [ $# = 1 ] && git branch --track \"$1\" origin/\"$1\" && exit 0 || echo \"usage: git track <branch> [remote_branch]\\n\\nIf remote branch is not specified, the default is to use origin/<branch>\" && exit 1' -"
+
+	stats = "! git-quick-stats"
+
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[fetch]
+	prune = true
+[rebase]
+	autosquash = true
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[includeif "gitdir:~/Documents/work/iterative"]
+	name = Shen Nan
+	email = shennan@iterative.vc
+[http]
+	version = HTTP/1.1

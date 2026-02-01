@@ -1,0 +1,80 @@
+# Ignore everything by default
+*
+
+# =============================================================================
+# Shell Configuration (SAFE - no secrets)
+# =============================================================================
+!.zshrc
+!zsh/
+!zsh/**
+!starship.toml
+
+# =============================================================================
+# Package Management (SAFE)
+# =============================================================================
+!Brewfile
+
+# =============================================================================
+# Git Configuration (SAFE - no tokens)
+# =============================================================================
+!git/
+!git/.gitconfig
+!git/ignore
+
+# =============================================================================
+# Editor Configs (SAFE)
+# =============================================================================
+!nvim/
+!nvim/**
+!lvim/
+!lvim/**
+!zed/
+!zed/**
+
+# =============================================================================
+# Documentation (SAFE)
+# =============================================================================
+!CLAUDE.md
+!README.md
+
+# =============================================================================
+# Other Safe Configs
+# =============================================================================
+!.gitignore
+
+# =============================================================================
+# ALWAYS IGNORE (secrets, tokens, machine-specific)
+# =============================================================================
+# Compiled zsh files
+*.zwc
+
+# Claude settings (may contain API keys)
+.claude/
+
+# GitHub CLI (contains tokens)
+gh/
+gh-copilot/
+github-copilot/
+
+# Cloud CLIs (contain credentials)
+gcloud/
+configstore/
+
+# Service-specific (may contain tokens)
+asciinema/install-id
+planetscale/
+sanity/
+sourcery/
+pipedream/
+gatsby/
+opencode/
+
+# macOS
+.DS_Store
+
+# Sensitive patterns
+**/credentials*
+**/secrets*
+**/token*
+**/*.pem
+**/*.key
