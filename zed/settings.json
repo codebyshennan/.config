@@ -1,0 +1,156 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+{
+  "agent": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5",
+    },
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+    },
+  },
+  "show_edit_predictions": true,
+
+  // --- UI ---
+  "base_keymap": "VSCode",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Mirage",
+  },
+  "buffer_font_size": 15,
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true,
+  },
+  "tab_bar": {
+    "show": true,
+  },
+  "scrollbar": {
+    "show": "auto",
+  },
+  "cursor_blink": false,
+  "current_line_highlight": "all",
+  "relative_line_numbers": "enabled",
+
+  // --- Editor behaviour ---
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "auto_signature_help": true,
+  "use_autoclose": true,
+  "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "hard_tabs": false,
+  "inlay_hints": {
+    "enabled": true,
+    "show_parameter_hints": false,
+    "show_type_hints": true,
+    "show_other_hints": true,
+  },
+
+  // --- Git ---
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 600,
+    },
+    "git_gutter": "tracked_files",
+  },
+
+  // --- Terminal ---
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono",
+    "font_size": 14,
+    "blinking": "off",
+    "copy_on_select": true,
+    "env": {
+      "EDITOR": "zed --wait",
+    },
+  },
+
+  // --- Privacy ---
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  // --- File scanning ---
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/node_modules",
+    "**/.venv",
+    "**/__pycache__",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.mypy_cache",
+    "**/dist",
+    "**/build",
+    "**/.next",
+    "**/.turbo",
+  ],
+
+  // --- File associations ---
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"],
+    "Shell Script": [".env.*"],
+  },
+
+  // --- Per-language overrides ---
+  "languages": {
+    "Python": {
+      "tab_size": 4,
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": { "name": "ruff" },
+        },
+      ],
+      "language_servers": ["pyright", "ruff"],
+    },
+    "JavaScript": {
+      "tab_size": 2,
+      "soft_wrap": "editor_width",
+      "formatter": { "language_server": { "name": "prettier" } },
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      "formatter": { "language_server": { "name": "prettier" } },
+    },
+    "TSX": {
+      "tab_size": 2,
+      "formatter": { "language_server": { "name": "prettier" } },
+    },
+    "JSON": {
+      "tab_size": 2,
+      "formatter": { "language_server": { "name": "json-language-server" } },
+    },
+    "JSONC": {
+      "tab_size": 2,
+    },
+    "Markdown": {
+      "soft_wrap": "editor_width",
+      "format_on_save": "off",
+    },
+    "YAML": {
+      "tab_size": 2,
+    },
+    "Shell Script": {
+      "tab_size": 2,
+    },
+  },
+}
