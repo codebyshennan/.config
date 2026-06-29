@@ -77,8 +77,10 @@ $time"""
 # =============================================================================
 # Disabled Language Detectors (uncomment if needed)
 # =============================================================================
+
 [cobol]
 disabled = true
+symbol = " "
 
 [daml]
 disabled = true
@@ -86,74 +88,113 @@ disabled = true
 [elm]
 disabled = true
 
+symbol = " "
+
 [erlang]
 disabled = true
+symbol = " "
 
 [fennel]
 disabled = true
 
+symbol = " "
+
 [guix_shell]
 disabled = true
+
+symbol = " "
 
 [haskell]
 disabled = true
 
+symbol = " "
+
 [haxe]
 disabled = true
+
+symbol = " "
 
 [julia]
 disabled = true
 
+symbol = " "
+
 [nim]
 disabled = true
+
+symbol = "󰆥 "
 
 [ocaml]
 disabled = true
 
+symbol = " "
+
 [opa]
 disabled = true
+symbol = " "
 
 [perl]
 disabled = true
 
+symbol = " "
+
 [purescript]
 disabled = true
+symbol = " "
 
 [raku]
 disabled = true
+symbol = "󱖊 "
 
 [rlang]
 disabled = true
 
+symbol = "󰟔 "
+
 [red]
 disabled = true
+symbol = "󱍼 "
 
 [swift]
 disabled = true
 
+symbol = " "
+
 [vlang]
 disabled = true
+symbol = " "
 
 [zig]
 disabled = true
 
+symbol = " "
+
 [buf]
 disabled = true
+
+symbol = " "
 
 [meson]
 disabled = true
 
+symbol = "󰔷 "
+
 [spack]
 disabled = true
+symbol = " "
 
 [openstack]
 disabled = true
+symbol = " "
 
 [crystal]
 disabled = true
 
+symbol = " "
+
 [singularity]
 disabled = true
+symbol = " "
 
 [vcsh]
 disabled = true
@@ -161,17 +202,26 @@ disabled = true
 [fossil_branch]
 disabled = true
 
+symbol = " "
+
 [hg_branch]
 disabled = true
+
+symbol = " "
 
 [pijul_channel]
 disabled = true
 
+symbol = " "
+
 [vagrant]
 disabled = true
+symbol = " "
 
 [memory_usage]
 disabled = true
+
+symbol = "󰍛 "
 
 [custom]
 disabled = true
@@ -291,6 +341,7 @@ renamed = "[◎◦](italic bright-blue)"
 deleted = "[✕](italic red)"
 
 [deno]
+symbol = " "
 format = " [deno](italic) [∫ $version](green bold)"
 version_format = "${raw}"
 
@@ -312,12 +363,8 @@ format = " [pkg](italic dimmed) [$symbol$version]($style)"
 version_format = "${raw}"
 style = "dimmed yellow italic bold"
 
-
 [aws]
 symbol = " "
-
-[buf]
-symbol = " "
 
 [c]
 symbol = " "
@@ -328,9 +375,6 @@ symbol = " "
 [conda]
 symbol = " "
 
-[crystal]
-symbol = " "
-
 [dart]
 symbol = " "
 
@@ -340,32 +384,11 @@ symbol = " "
 [elixir]
 symbol = " "
 
-[elm]
-symbol = " "
-
-[fennel]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
 [git_commit]
 tag_symbol = '  '
 
 [golang]
 symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
 
 [hostname]
 ssh_symbol = " "
@@ -373,32 +396,17 @@ ssh_symbol = " "
 [java]
 symbol = " "
 
-[julia]
-symbol = " "
-
 [kotlin]
 symbol = " "
 
 [lua]
 symbol = " "
 
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
 [nix_shell]
 symbol = " "
 
 [nodejs]
 symbol = " "
-
-[ocaml]
-symbol = " "
 
 [os.symbols]
 Alpaquita = " "
@@ -447,29 +455,14 @@ Unknown = " "
 Void = " "
 Windows = "󰍲 "
 
-[perl]
-symbol = " "
-
 [php]
 symbol = " "
-
-[pijul_channel]
-symbol = " "
 
 [python]
 symbol = " "
 
-[rlang]
-symbol = "󰟔 "
-
 [scala]
 symbol = " "
-
-[swift]
-symbol = " "
-
-[zig]
-symbol = " "
 
 [gradle]
 symbol = " "
