@@ -4,11 +4,9 @@
 # =============================================================================
 # Using fnm (Fast Node Manager) - 40x faster than nvm
 
-# fnm PATH
+# fnm PATH + eager init (fnm is a fast Rust binary, lazy-load not worth it)
 export PATH="$HOME/Library/Application Support/fnm:$PATH"
-
-# Lazy load fnm - only initialize when node/npm/npx/fnm is called
-lazy_load "node npm npx pnpm yarn fnm" 'eval "$(fnm env --use-on-cd)"'
+eval "$(fnm env --use-on-cd)"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -17,5 +15,6 @@ export PNPM_HOME="$HOME/Library/pnpm"
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Bun (lazy completion)
-[[ -s "$HOME/.bun/_bun" ]] && lazy_load "bun bunx" 'source "$HOME/.bun/_bun"'
+# Bun
+export PATH="$HOME/.bun/bin:$PATH"
+[[ -s "$HOME/.bun/_bun" ]] && lazy_load "bun bunx" 'source "$HOME/.bun/_bun"'  # lazy completion

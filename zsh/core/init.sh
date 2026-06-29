@@ -18,9 +18,13 @@ plugins=(
 # Defer oh-my-zsh loading slightly but keep it synchronous for prompt
 source $ZSH/oh-my-zsh.sh
 
-# Terminal-Specific Prompt
-if [[ $TERM_PROGRAM == "WarpTerminal" ]]; then
-    eval "$(starship init zsh)"
-else
+# Prompt
+eval "$(starship init zsh)"
+
+# iTerm2 shell integration (non-Warp only)
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
     [[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+# Local bin env (uv, rust, etc.)
+[[ -f "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"

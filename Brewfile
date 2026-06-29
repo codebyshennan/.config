@@ -3,7 +3,7 @@
 # =============================================================================
 # Install: brew bundle --file=~/.config/Brewfile
 # Update:  brew bundle dump --file=~/.config/Brewfile --force
-# Generated: 2026-02-01
+# Generated: 2026-02-25
 
 # =============================================================================
 # Taps
@@ -67,7 +67,6 @@ brew "black"                  # Python formatter
 brew "cmake"
 brew "commitizen"
 brew "gcc"
-brew "gcc@12"
 brew "git"
 brew "git-delta"              # Better git diff
 brew "git-extras"
@@ -84,7 +83,6 @@ brew "mkcert"                 # Local HTTPS certs
 brew "neovim"
 brew "pre-commit"
 brew "tmux"
-brew "vim"
 brew "watchman"
 
 # =============================================================================
@@ -92,7 +90,7 @@ brew "watchman"
 # =============================================================================
 # Node.js
 brew "fnm"                    # Fast Node Manager
-brew "node"
+brew "node"                   # Required by emscripten, gemini-cli, mongodb, snyk-cli
 brew "oven-sh/bun/bun"
 
 # Python
@@ -151,7 +149,6 @@ brew "k3d"
 brew "k6"                     # Load testing
 brew "kind"
 brew "kompose"
-brew "kube-ps1"
 brew "kubernetes-cli"
 brew "kubectx"
 brew "minikube"
@@ -199,7 +196,6 @@ brew "mongodb/brew/mongodb-community"
 brew "mysql-client"
 brew "nifi"
 brew "nsq"
-brew "postgresql@14", link: false
 brew "postgresql@15", restart_service: :changed, link: true
 brew "postgresql@17", restart_service: :changed
 brew "rabbitmq"
@@ -239,7 +235,6 @@ brew "qemu"
 brew "qt"
 brew "qt@5"
 brew "recode"
-brew "spaceship"
 brew "starship"
 brew "pipedreamhq/pd-cli/pipedream"
 brew "yakitrak/yakitrak/obsidian-cli"
@@ -270,7 +265,6 @@ cask "iterm2"
 cask "keycastr"
 cask "lens"                   # Kubernetes IDE
 cask "logitech-camera-settings"
-cask "macdown"
 cask "ngrok"
 cask "opencode-desktop"
 cask "shortcat"

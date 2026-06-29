@@ -110,6 +110,7 @@
 	track = "!sh -c '[ $# = 2 ] && git branch --track \"$1\" \"$2\" && exit 0 || [ $# = 1 ] && git branch --track \"$1\" origin/\"$1\" && exit 0 || echo \"usage: git track <branch> [remote_branch]\\n\\nIf remote branch is not specified, the default is to use origin/<branch>\" && exit 1' -"
 
 	stats = "! git-quick-stats"
+	squash-checkpoints = !bash /Users/wongshennan/Documents/personal/scripts/squash-checkpoints.sh
 
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
@@ -128,8 +129,16 @@
 	required = true
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
-[includeif "gitdir:~/Documents/work/iterative"]
-	name = Shen Nan
-	email = shennan@iterative.vc
+[includeIf "gitdir:~/Documents/personal/"]
+	path = ~/Documents/personal/.gitconfig
 [http]
 	version = HTTP/1.1
+[user]
+	name = Shen Nan, Wong
+	email = wongshennan@gmail.com
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
