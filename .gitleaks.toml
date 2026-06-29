@@ -1,0 +1,16 @@
+# gitleaks config for the public ~/.config repo.
+# Extends the built-in ruleset; only adds allowlists for known false positives.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "False positives and machine-local paths that never hold live secrets"
+# These dirs are gitignored and only appear in pre-2024 history (third-party
+# bundles / rotated creds). Listed so ad-hoc full-history scans stay readable.
+paths = [
+  '''raycast/extensions/.*''',
+  '''gcloud/.*''',
+]
+regexes = [
+  '''kubectl get secrets''',   # the `kgsc` alias, not a credential
+]
